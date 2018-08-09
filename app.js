@@ -7,7 +7,12 @@ var cors=require('cors');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var food=require('./routes/dish_route');
+var bill=require('./routes/bill_route');
+var billdetail=require('./routes/billdetail_route');
 var cusine=require('./routes/cosine_route');
+var past=require('./routes/past_record');
+var pastrecord=require('./routes/past_orderdetail');
+var login=require('./routes/login_route');
 var app = express();
 
 // view engine setup
@@ -24,6 +29,11 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/food',food);
 app.use('/cusine',cusine);
+app.use('/bill',bill);
+app.use('/billdetail',billdetail);
+app.use('/past',past);
+app.use('/login',login);
+app.use('/pastrecord',pastrecord);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
